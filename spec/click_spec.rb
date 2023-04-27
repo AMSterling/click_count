@@ -1,7 +1,4 @@
 require 'spec_helper'
-require 'rspec'
-require 'csv'
-require 'json'
 require './lib/data_structure'
 require './lib/click'
 
