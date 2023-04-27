@@ -111,21 +111,6 @@ _A full list of gems that will be installed can be found in the [gemfile][gemfil
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/AMSterling/viewing_party_lite.svg?style=for-the-badge
-[contributors-url]: https://github.com/AMSterling/viewing_party_lite/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/AMSterling/viewing_party_lite.svg?style=for-the-badge
-[forks-url]: https://github.com/AMSterling/viewing_party_lite/network/members
-[gemfile-url]: https://github.com/AMSterling/viewing_party_lite/blob/main/Gemfile
-[stars-shield]: https://img.shields.io/github/stars/AMSterling/viewing_party_lite.svg?style=for-the-badge
-[stars-url]: https://github.com/AMSterling/viewing_party_lite/stargazers
-[issues-shield]: https://img.shields.io/github/issues/AMSterling/viewing_party_lite.svg?style=for-the-badge
-[issues-url]: https://github.com/AMSterling/viewing_party_lite/issues
-[license-shield]: https://img.shields.io/github/license/AMSterling/viewing_party_lite.svg?style=for-the-badge
-[license-url]: https://github.com/AMSterling/viewing_party_lite/blob/master/LICENSE.txt
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/sterling-316a6223a/
-[linkedin-shield2]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url2]: https://linkedin.com/in/blake-saylor
 
 [Atom]: https://img.shields.io/badge/Atom-66595C?style=for-the-badge&logo=Atom&logoColor=white
 [Atom-url]: https://github.com/atom/atom/releases/tag/v1.60.0
