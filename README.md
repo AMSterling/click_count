@@ -101,6 +101,7 @@ _A full list of gems that will be installed can be found in the [gemfile][gemfil
     ```sh
       open coverage/index.html
     ```
+<img width="1428" alt="Screenshot 2023-04-27 at 10 13 09 AM" src="https://user-images.githubusercontent.com/103849872/234935684-29b906f2-de22-4368-a50d-541317b6bb14.png">
 
 ---
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
