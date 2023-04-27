@@ -9,16 +9,17 @@
 
 <h1 align="center">Click Count</h1>
 
-  <p align="center">
+  <p>
     Click Count counts number of clicks where path in json file matches hash in csv file.
     Output:
+    
     ```sh
-    [{"https://youtube.com/":557},
-    {"https://twitter.com/":512},
-    {"https://reddit.com/":510},
-    {"https://github.com/":497},
-    {"https://linkedin.com/":496},
-    {"https://google.com/":492}]
+     [{"https://youtube.com/":557},
+     {"https://twitter.com/":512},
+     {"https://reddit.com/":510},
+     {"https://github.com/":497},
+     {"https://linkedin.com/":496},
+     {"https://google.com/":492}]
     ```
   </p>
 </div>
