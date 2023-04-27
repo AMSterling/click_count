@@ -30,4 +30,3 @@ class Click
     result.sort_by! { |el| el.values }.reverse
   end
 end
-# Can add .as_json
