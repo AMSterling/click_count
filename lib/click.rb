@@ -36,8 +36,8 @@ class Click
         { "#{el[:long_url]}" =>  x[0] }
       end
     else
-      puts "Must be a 4-digit year (YYYY), run again"
-      exit
+      puts "Must be a 4-digit year (YYYY), try again"
+      hash_matches(filename)
     end
     path_count.empty? ? "No results matching #{@search_year}" : result.sort_by! { |el| el.values }.reverse
   end
