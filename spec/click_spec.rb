@@ -8,6 +8,10 @@ RSpec.describe Click do
   let(:csv) { DataStructure.new(filename) }
   let(:dataset) { Click.new(filepath) }
 
+  before do
+    allow($stdin).to receive(:gets).and_return('2021')
+  end
+
   it 'reads the json' do
 
     expect(dataset).to be_a Click
@@ -18,7 +22,7 @@ RSpec.describe Click do
     end
   end
 
-  it 'filters the file to return 2021 timestamps' do
+  it 'filters the file to return user entered timestamps' do
 
     expect(dataset).to be_a Click
     expect(dataset.filter_by_date).to be_an Array
