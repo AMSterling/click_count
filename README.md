@@ -9,22 +9,14 @@
 
 <h1 align="center">Click Count</h1>
 
-  <p align="center">
-    Click Count counts number of clicks where path in json file matches hash in csv file.
-    Output:
-    ```sh
-    [{"https://youtube.com/":557},
-    {"https://twitter.com/":512},
-    {"https://reddit.com/":510},
-    {"https://github.com/":497},
-    {"https://linkedin.com/":496},
-    {"https://google.com/":492}]
-    ```
-  </p>
 </div>
 
-
-
+<div>
+  <p>
+    Click Count counts number of clicks where path in json file matches hash in csv file.
+  </p>
+ </div>
+ 
 <!-- TABLE OF CONTENTS -->
 <details>
   <summary>Table of Contents</summary>
@@ -94,11 +86,24 @@ _A full list of gems that will be installed can be found in the [gemfile][gemfil
     ```sh
       ruby lib/runner.rb
     ```
+    <div>
+  
+      Output:
+    
+        [{"https://youtube.com/":557},
+        {"https://twitter.com/":512},
+        {"https://reddit.com/":510},
+        {"https://github.com/":497},
+        {"https://linkedin.com/":496},
+        {"https://google.com/":492}]
+        
+    </div>
 
 2. For test coverage run:
     ```sh
       open coverage/index.html
     ```
+<img width="1428" alt="Screenshot 2023-04-27 at 10 13 09 AM" src="https://user-images.githubusercontent.com/103849872/234935684-29b906f2-de22-4368-a50d-541317b6bb14.png">
 
 ---
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -106,21 +111,6 @@ _A full list of gems that will be installed can be found in the [gemfile][gemfil
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/AMSterling/viewing_party_lite.svg?style=for-the-badge
-[contributors-url]: https://github.com/AMSterling/viewing_party_lite/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/AMSterling/viewing_party_lite.svg?style=for-the-badge
-[forks-url]: https://github.com/AMSterling/viewing_party_lite/network/members
-[gemfile-url]: https://github.com/AMSterling/viewing_party_lite/blob/main/Gemfile
-[stars-shield]: https://img.shields.io/github/stars/AMSterling/viewing_party_lite.svg?style=for-the-badge
-[stars-url]: https://github.com/AMSterling/viewing_party_lite/stargazers
-[issues-shield]: https://img.shields.io/github/issues/AMSterling/viewing_party_lite.svg?style=for-the-badge
-[issues-url]: https://github.com/AMSterling/viewing_party_lite/issues
-[license-shield]: https://img.shields.io/github/license/AMSterling/viewing_party_lite.svg?style=for-the-badge
-[license-url]: https://github.com/AMSterling/viewing_party_lite/blob/master/LICENSE.txt
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/sterling-316a6223a/
-[linkedin-shield2]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url2]: https://linkedin.com/in/blake-saylor
 
 [Atom]: https://img.shields.io/badge/Atom-66595C?style=for-the-badge&logo=Atom&logoColor=white
 [Atom-url]: https://github.com/atom/atom/releases/tag/v1.60.0
