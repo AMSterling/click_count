@@ -24,19 +24,20 @@ class Click
 
   def user_input
     input_year = $stdin.gets.chomp
-      # unless input_year.match?(/^\d{4}$/)
-      #   puts "Must be a 4-digit year (YYYY), run again"
-      #   exit
-      # end
   end
 
   def hash_matches(filename)
     data = DataStructure.new(filename).encodes
     puts 'Enter a year (YYYY)'
     @search_year = user_input
-    result = data.map do |el|
-      x = path_count.keep_if { |k, v| v if el[:hash] == k }.map(&:last)
-      { "#{el[:long_url]}" =>  x[0] }
+    if @search_year.match?(/^\d{4}$/)
+      result = data.map do |el|
+        x = path_count.keep_if { |k, v| v if el[:hash] == k }.map(&:last)
+        { "#{el[:long_url]}" =>  x[0] }
+      end
+    else
+      puts "Must be a 4-digit year (YYYY), run again"
+      exit
     end
     path_count.empty? ? "No results matching #{@search_year}" : result.sort_by! { |el| el.values }.reverse
   end
