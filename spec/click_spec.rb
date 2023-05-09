@@ -41,6 +41,7 @@ RSpec.describe Click do
   it 'only allows 4 digit user input' do
     allow($stdin).to receive(:gets).and_return('201')
 
+    expect(click.user_input.match?(/^\d{4}$/)).to be false
     expect(click.start)
     .to output('Must be a 4-digit year (YYYY), try again')
     .to_stdout
@@ -49,6 +50,7 @@ RSpec.describe Click do
   it 'has no matches' do
     allow($stdin).to receive(:gets).and_return('2018')
 
+    expect(click.user_input.match?(/^\d{4}$/)).to be false
     expect(click.hash_matches)
     .to output('No results matching 2018')
     .to_stdout
@@ -59,6 +61,7 @@ RSpec.describe Click do
     allow($stdin).to receive(:gets).and_return('2021')
 
     expect(click.user_input).to eq('2021')
+    expect(click.user_input.match?(/^\d{4}$/)).to be true
     expect(click.start).to be_an Array
     expect(click.start).to eq(
       [
