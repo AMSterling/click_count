@@ -243,3 +243,4 @@ _A full list of gems that will be installed can be found in the [gemfile][gemfil
 [simplecov-docs]: https://github.com/simplecov-ruby/simplecov
 [vcr-docs]: https://github.com/vcr/vcr
 [webmock-docs]: https://github.com/bblimke/webmock
+[gemfile-url]: https://github.com/AMSterling/click_count/blob/main/Gemfile
