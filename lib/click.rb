@@ -1,6 +1,6 @@
 require 'csv'
 require 'json'
-require 'date'
+require 'stringio'
 require './lib/encoded'
 require './lib/decoded'
 
@@ -14,8 +14,7 @@ class Click
     puts 'Enter a year (YYYY)'
     @user_input = user_input
     if @user_input.match?(/^\d{4}$/)
-      require "pry"; binding.pry
-      hash_matches.to_json
+      hash_matches
     else
       puts 'Must be a 4-digit year (YYYY), try again'
       exit
@@ -31,7 +30,7 @@ class Click
   end
 
   def user_input
-    gets.chomp
+    $stdin.gets.chomp
   end
 
   def hash_matches

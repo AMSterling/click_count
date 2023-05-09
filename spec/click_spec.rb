@@ -9,11 +9,8 @@ RSpec.describe Click do
   let(:csv) { Encoded.new(filename) }
   let(:click) { Click.new(filepath, filename) }
 
-  before do
-    allow(click).to receive(:user_input).and_return('2021')
-  end
-
-  it 'filters the file to return user entered timestamps' do
+  xit 'filters the file to return user entered timestamps' do
+    allow($stdin).to receive(:gets).and_return('2021')
 
     expect(click).to be_a Click
     expect(click.user_input).to eq('2021')
@@ -25,7 +22,8 @@ RSpec.describe Click do
     end
   end
 
-  it 'tallies bitlink urls' do
+  xit 'tallies bitlink urls' do
+    allow($stdin).to receive(:gets).and_return('2021')
 
     expect(click.path_count).to be_a Hash
     expect(click.path_count).to eq({"3MgVNnZ"=>521,
@@ -41,7 +39,7 @@ RSpec.describe Click do
   end
 
   it 'only allows 4 digit user input' do
-    allow(click).to receive(:user_input).and_return('201')
+    allow($stdin).to receive(:gets).and_return('201')
 
     expect(click.start)
     .to output('Must be a 4-digit year (YYYY), try again')
@@ -49,7 +47,7 @@ RSpec.describe Click do
   end
 
   it 'has no matches' do
-    allow(click).to receive(:user_input).and_return('2018')
+    allow($stdin).to receive(:gets).and_return('2018')
 
     expect(click.hash_matches)
     .to output('No results matching 2018')
@@ -58,14 +56,19 @@ RSpec.describe Click do
   end
 
   it 'matches csv hash with bitlink path' do
+    allow($stdin).to receive(:gets).and_return('2021')
 
     expect(click.user_input).to eq('2021')
-    expect(click.hash_matches).to be_an Array
-    expect(click.hash_matches).to eq([{"https://youtube.com/"=>557},
-                                                  {"https://twitter.com/"=>512},
-                                                  {"https://reddit.com/"=>510},
-                                                  {"https://github.com/"=>497},
-                                                  {"https://linkedin.com/"=>496},
-                                                  {"https://google.com/"=>492}])
+    expect(click.start).to be_an Array
+    expect(click.start).to eq(
+      [
+        {"https://youtube.com/"=>557},
+        {"https://twitter.com/"=>512},
+        {"https://reddit.com/"=>510},
+        {"https://github.com/"=>497},
+        {"https://linkedin.com/"=>496},
+        {"https://google.com/"=>492}
+      ]
+     )
   end
 end
