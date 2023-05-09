@@ -16,7 +16,7 @@
     Click Count counts number of clicks where path in json file matches hash in csv file.
   </p>
  </div>
- 
+
 <!-- TABLE OF CONTENTS -->
 <details>
   <summary>Table of Contents</summary>
@@ -84,22 +84,38 @@ _A full list of gems that will be installed can be found in the [gemfile][gemfil
 
 1. To run program, in terminal run:
     ```sh
-      ruby lib/runner.rb
+      ruby runner.rb
     ```
+2. Follow promt ``Enter a year (YYYY)``
+
     <div>
-  
-      Output:
-    
-        [{"https://youtube.com/":557},
-        {"https://twitter.com/":512},
-        {"https://reddit.com/":510},
-        {"https://github.com/":497},
-        {"https://linkedin.com/":496},
-        {"https://google.com/":492}]
-        
+
+      Output for 2021:
+
+        [{\"https://youtube.com/\":557},
+        {\"https://twitter.com/\":512},
+        {\"https://reddit.com/\":510},
+        {\"https://github.com/\":497},
+        {\"https://linkedin.com/\":496},
+        {\"https://google.com/\":492}]
+
+    </div>
+    <div>
+
+      Output for 2018:
+
+        No results matching 2018
+
+    </div>
+    <div>
+
+      Output for abcd:
+
+        Must be a 4-digit year (YYYY), try again
+
     </div>
 
-2. For test coverage run:
+3. For test coverage run:
     ```sh
       open coverage/index.html
     ```

@@ -1,33 +1,25 @@
 require 'spec_helper'
-require './lib/data_structure'
+require './lib/encoded'
+require './lib/decoded'
 require './lib/click'
 
 RSpec.describe Click do
   let(:filename) { './data/encodes.csv' }
   let(:filepath) { './data/decodes.json' }
-  let(:csv) { DataStructure.new(filename) }
-  let(:dataset) { Click.new(filepath) }
+  let(:csv) { Encoded.new(filename) }
+  let(:click) { Click.new(filepath, filename) }
 
   before do
-    allow($stdin).to receive(:gets).and_return('2021')
-  end
-
-  it 'reads the json' do
-
-    expect(dataset).to be_a Click
-    expect(dataset.decodes).to be_an Array
-    expect(dataset.decodes.count).to eq 10000
-    dataset.decodes.each do |set|
-      expect(set.keys).to eq([:bitlink, :user_agent, :timestamp, :referrer, :remote_ip])
-    end
+    allow(click).to receive(:user_input).and_return('2021')
   end
 
   it 'filters the file to return user entered timestamps' do
 
-    expect(dataset).to be_a Click
-    expect(dataset.filter_by_date).to be_an Array
-    expect(dataset.filter_by_date.count).to eq 5082
-    dataset.filter_by_date.each do |set|
+    expect(click).to be_a Click
+    expect(click.user_input).to eq('2021')
+    expect(click.filter_by_date).to be_an Array
+    expect(click.filter_by_date.count).to eq 5082
+    click.filter_by_date.each do |set|
       expect(set.keys).to eq([:bitlink, :user_agent, :timestamp, :referrer, :remote_ip])
       expect(set[:timestamp]).to start_with('2021')
     end
@@ -35,8 +27,8 @@ RSpec.describe Click do
 
   it 'tallies bitlink urls' do
 
-    expect(dataset.path_count).to be_a Hash
-    expect(dataset.path_count).to eq({"3MgVNnZ"=>521,
+    expect(click.path_count).to be_a Hash
+    expect(click.path_count).to eq({"3MgVNnZ"=>521,
                                       "2kjqil6"=>521,
                                       "2kkAHNs"=>512,
                                       "2kJdsg8"=>510,
@@ -48,10 +40,28 @@ RSpec.describe Click do
                                       "3C5IIJm"=>510})
   end
 
+  it 'only allows 4 digit user input' do
+    allow(click).to receive(:user_input).and_return('201')
+
+    expect(click.start)
+    .to output('Must be a 4-digit year (YYYY), try again')
+    .to_stdout
+  end
+
+  it 'has no matches' do
+    allow(click).to receive(:user_input).and_return('2018')
+
+    expect(click.hash_matches)
+    .to output('No results matching 2018')
+    .to_stdout
+    expect(click.start).to output('No results matching 2018')
+  end
+
   it 'matches csv hash with bitlink path' do
 
-    expect(dataset.hash_matches(filename)).to be_an Array
-    expect(dataset.hash_matches(filename)).to eq([{"https://youtube.com/"=>557},
+    expect(click.user_input).to eq('2021')
+    expect(click.hash_matches).to be_an Array
+    expect(click.hash_matches).to eq([{"https://youtube.com/"=>557},
                                                   {"https://twitter.com/"=>512},
                                                   {"https://reddit.com/"=>510},
                                                   {"https://github.com/"=>497},

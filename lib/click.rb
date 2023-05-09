@@ -1,21 +1,29 @@
 require 'csv'
 require 'json'
 require 'date'
-require './lib/data_structure'
+require './lib/encoded'
+require './lib/decoded'
 
 class Click
-  def initialize(data)
-    @data = data
-    @decodes = decodes
+  def initialize(filepath, filename)
+    @encodes = Encoded.new(filename).encodes
+    @decodes = Decoded.new(filepath).decodes
   end
 
-  def decodes
-    json_file = File.read(@data)
-    JSON.parse(json_file, symbolize_names: true)
+  def start
+    puts 'Enter a year (YYYY)'
+    @user_input = user_input
+    if @user_input.match?(/^\d{4}$/)
+      require "pry"; binding.pry
+      hash_matches.to_json
+    else
+      puts 'Must be a 4-digit year (YYYY), try again'
+      exit
+    end
   end
 
   def filter_by_date
-    decodes.select { |bitlink| bitlink[:timestamp][0..3] == @search_year }
+    @decodes.select { |bitlink| bitlink[:timestamp][0..3] == @user_input }
   end
 
   def path_count
@@ -23,22 +31,14 @@ class Click
   end
 
   def user_input
-    input_year = $stdin.gets.chomp
+    gets.chomp
   end
 
-  def hash_matches(filename)
-    data = DataStructure.new(filename).encodes
-    puts 'Enter a year (YYYY)'
-    @search_year = user_input
-    if @search_year.match?(/^\d{4}$/)
-      result = data.map do |el|
-        x = path_count.keep_if { |k, v| v if el[:hash] == k }.map(&:last)
-        { "#{el[:long_url]}" =>  x[0] }
-      end
-    else
-      puts "Must be a 4-digit year (YYYY), try again"
-      hash_matches(filename)
+  def hash_matches
+    result = @encodes.map do |el|
+      x = path_count.keep_if { |k, v| v if el[:hash] == k }.map(&:last)
+      { "#{el[:long_url]}" =>  x[0] }
     end
-    path_count.empty? ? "No results matching #{@search_year}" : result.sort_by! { |el| el.values }.reverse
+    path_count.empty? ? "No results matching #{@user_input}" : result.sort_by! { |el| el.values }.reverse
   end
 end

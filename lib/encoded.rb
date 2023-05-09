@@ -1,6 +1,6 @@
 require 'csv'
 
-class DataStructure
+class Encoded
   def initialize(data)
     @data = data
     @encodes = encodes

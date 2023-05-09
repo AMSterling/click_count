@@ -1,13 +1,14 @@
 require 'spec_helper'
-require './lib/data_structure'
+require './lib/encoded'
+require './lib/decoded'
 
-RSpec.describe DataStructure do
+RSpec.describe Encoded do
   let(:filename) { './data/encodes.csv' }
-  let(:csv) { DataStructure.new(filename) }
+  let(:csv) { Encoded.new(filename) }
 
   it 'reads and coverts the CSV' do
 
-    expect(csv).to be_a DataStructure
+    expect(csv).to be_a Encoded
     expect(csv.encodes).to be_an Array
     expect(csv.encodes.count).to eq 6
     csv.encodes.each do |struct|
