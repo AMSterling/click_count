@@ -2,8 +2,8 @@
 
 source "https://rubygems.org"
 
-gem 'simplecov', require: false, group: :test
-gem 'rspec'
 gem 'csv'
 gem 'json'
+gem 'rspec'
+gem 'simplecov', require: false, group: :test
 gem 'stringio'
