@@ -3,12 +3,12 @@ require './lib/encoded'
 require './lib/decoded'
 
 RSpec.describe Decoded do
-  let(:filename) { './data/encodes.csv' }
-  let(:json) { Decoded.new(filename) }
+  let(:filepath) { './data/decodes.json' }
+  let(:json) { Decoded.new(filepath) }
 
   it 'reads the json' do
 
-    expect(json).to be_a Click
+    expect(json).to be_a Decoded
     expect(json.decodes).to be_an Array
     expect(json.decodes.count).to eq 10000
     json.decodes.each do |set|
