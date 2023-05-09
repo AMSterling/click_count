@@ -120,7 +120,7 @@ _A full list of gems that will be installed can be found in the [gemfile][gemfil
       open coverage/index.html
     ```
 
-<img width="1433" alt="Screenshot 2023-05-08 at 8 11 38 PM" src="https://user-images.githubusercontent.com/103849872/236976754-902652bc-444c-4b3b-9b59-a7f597179132.png">
+<img width="1436" alt="Screenshot 2023-05-08 at 8 15 08 PM" src="https://user-images.githubusercontent.com/103849872/236976891-f63120c8-41c1-4f27-8b71-0a7ae8bd5441.png">
 
 ---
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
