@@ -1,5 +1,6 @@
 <a name="readme-top"></a>
 
+[![Maintainability](https://api.codeclimate.com/v1/badges/f0576bf63fe772457602/maintainability)](https://codeclimate.com/github/AMSterling/click_count/maintainability)
 
 <!-- PROJECT LOGO -->
 <br />
